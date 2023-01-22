@@ -12,7 +12,7 @@ const raleway = Raleway({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${raleway.variable} font-sans scroll-smooth bg-gradient-to-b from-slate-900 to-slate-800 w-screen h-screen`}>
+    <main className={`${raleway.variable} font-sans scroll-smooth`}>
       <Head>
         <title>Training Counter</title>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

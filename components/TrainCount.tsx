@@ -15,18 +15,27 @@ export default function TrainCount() {
     return () => clearInterval(interval)
   }, [running])
   return (
-    <div className="text-white text-4xl md:text-5xl border-red-200 border-2 w-[95vw] max-w-lg rounded-full py-10 bg-black">
-      <div className=" mb-8 font-mono text-center text-5xl">
+    <div className="text-white text-4xl md:text-5xl border-white border-2 w-[95vw] max-w-lg rounded-full bg-black select-none">
+      <div style={running ? { color: "white" } : { color: "#333333" }} className=" font-mono text-center text-5xl md:text-6xl p-8">
         <span className="pr-1">{("0" + Math.floor((time / 60000) % 60)).slice(-2)}</span>
         <span className="pr-1">:</span>
         <span className="pr-1">{("0" + Math.floor((time / 1000) % 60)).slice(-2)}</span>
         <span className="pr-1">:</span>
         <span className="pr-1">{("0" + ((time / 10) % 100)).slice(-2)}</span>
       </div>
-      <div className="py-4 px-3 flex justify-around">
-        <button onClick={() => setRunning(true)}>Start</button>
-        <button onClick={() => setRunning(false)}>Stop</button>
-        <button onClick={() => setTime(0)}>Reset</button>
+      <div className=" flex justify-around font-mono pb-8">
+        <button className="" onClick={() => setRunning(!running)}>
+          {running ? "Stop" : "Start"}
+        </button>
+        <button
+          className=""
+          onClick={() => {
+            setTime(0)
+            setRunning(false)
+          }}
+        >
+          Reset
+        </button>
       </div>
     </div>
   )
