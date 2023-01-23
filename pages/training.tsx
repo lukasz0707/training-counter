@@ -33,21 +33,6 @@ export default function training() {
       <div className="flex flex-col text-3xl font-mono text-white text-center mb-8">
         <p className="select-none">Series</p>
         <div className="flex justify-center items-start mb-2">
-          <button
-            className=""
-            onClick={() => {
-              setSeries(series + 1)
-            }}
-          >
-            <AiOutlinePlusCircle size={51} />
-          </button>
-          <input
-            disabled
-            type="text"
-            value={series}
-            id="series"
-            className=" border rounded py-2 px-3 leading-tight focus:outline-none  w-28 bg-black focus:outline-gray-200 text-center mx-2 pointer-events-none"
-          />
           <button>
             <AiOutlineMinusCircle
               size={51}
@@ -56,16 +41,30 @@ export default function training() {
               }}
             />
           </button>
+          <input
+            disabled
+            type="text"
+            value={series}
+            id="series"
+            className=" border rounded py-2 px-3 leading-tight focus:outline-none  w-28 bg-black focus:outline-gray-200 text-center mx-2 pointer-events-none"
+          />
+          <button
+            className=""
+            onClick={() => {
+              setSeries(series + 1)
+            }}
+          >
+            <AiOutlinePlusCircle size={51} />
+          </button>
         </div>
         <p className="select-none">Time</p>
         <div className="flex justify-center items-start mb-2">
           <button
-            className=""
             onClick={() => {
-              setTime(time + 0.5)
+              setTime(Math.max(0, time - 0.5))
             }}
           >
-            <AiOutlinePlusCircle size={51} />
+            <AiOutlineMinusCircle size={51} />
           </button>
           <input
             disabled
@@ -74,22 +73,22 @@ export default function training() {
             className="border rounded py-2 px-3 leading-tight focus:outline-none  w-28 bg-black focus:outline-gray-200 text-center mx-2 pointer-events-none"
           />
           <button
+            className=""
             onClick={() => {
-              setTime(Math.max(0, time - 0.5))
+              setTime(time + 0.5)
             }}
           >
-            <AiOutlineMinusCircle size={51} />
+            <AiOutlinePlusCircle size={51} />
           </button>
         </div>
         <p className="select-none">Rest</p>
         <div className="flex justify-center items-start mb-2">
           <button
-            className=""
             onClick={() => {
-              setRest(rest + 0.5)
+              setRest(Math.max(0, rest - 0.5))
             }}
           >
-            <AiOutlinePlusCircle size={51} />
+            <AiOutlineMinusCircle size={51} />
           </button>
           <input
             disabled
@@ -98,11 +97,12 @@ export default function training() {
             className="border rounded py-2 px-3 leading-tight focus:outline-none  w-28 bg-black focus:outline-gray-200 text-center mx-2 pointer-events-none"
           />
           <button
+            className=""
             onClick={() => {
-              setRest(Math.max(0, rest - 0.5))
+              setRest(rest + 0.5)
             }}
           >
-            <AiOutlineMinusCircle size={51} />
+            <AiOutlinePlusCircle size={51} />
           </button>
         </div>
       </div>
