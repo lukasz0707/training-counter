@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-export default function TrainCount() {
+export default function TrainCount({ series, workout, rest }) {
   const [time, setTime] = useState(0)
   const [running, setRunning] = useState(false)
   useEffect(() => {

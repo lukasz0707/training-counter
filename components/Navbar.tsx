@@ -26,7 +26,7 @@ export default function Navbar() {
         <div>
           <div className={`flex-1 justify-self-center pb-3 mt-8 lg:block lg:pb-0 lg:mt-0 ${navbar ? "p-12 lg:p-0 block" : "hidden"}`}>
             <ul className="h-screen lg:h-auto place-items-baseline justify-center lg:flex text-2xl">
-              <Link href="/Schedule" onClick={() => setNavbar(!navbar)}>
+              <Link href="/workout" onClick={() => setNavbar(!navbar)}>
                 <li className="pb-6  text-white py-2 lg:px-6 text-center border-b-2 lg:border-b-0  hover:bg-slate-900 border-cyan-800   lg:hover:text-cyan-500 lg:hover:bg-transparent">
                   Workout
                 </li>

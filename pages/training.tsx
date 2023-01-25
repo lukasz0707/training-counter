@@ -6,7 +6,7 @@ import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai"
 
 export default function training() {
   const [series, setSeries] = useState(1)
-  const [time, setTime] = useState(1)
+  const [workout, setWorkout] = useState(1)
   const [rest, setRest] = useState(1)
 
   const parseTime = (x: number) => {
@@ -57,11 +57,11 @@ export default function training() {
             <AiOutlinePlusCircle size={51} />
           </button>
         </div>
-        <p className="select-none">Time</p>
+        <p className="select-none">Workout</p>
         <div className="flex justify-center items-start mb-2">
           <button
             onClick={() => {
-              setTime(Math.max(0, time - 0.5))
+              setWorkout(Math.max(0, workout - 0.5))
             }}
           >
             <AiOutlineMinusCircle size={51} />
@@ -69,13 +69,13 @@ export default function training() {
           <input
             disabled
             type="text"
-            value={parseTime(time)}
+            value={parseTime(workout)}
             className="border rounded py-2 px-3 leading-tight focus:outline-none  w-28 bg-black focus:outline-gray-200 text-center mx-2 pointer-events-none"
           />
           <button
             className=""
             onClick={() => {
-              setTime(time + 0.5)
+              setWorkout(workout + 0.5)
             }}
           >
             <AiOutlinePlusCircle size={51} />
@@ -106,7 +106,7 @@ export default function training() {
           </button>
         </div>
       </div>
-      <TrainCount />
+      <TrainCount series={series} workout={workout} rest={rest} />
     </div>
   )
 }
